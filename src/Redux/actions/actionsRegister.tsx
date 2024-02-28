@@ -5,9 +5,9 @@ import {
   } from "firebase/auth";
   import { typesLogin } from "../types/types";
   
-  export const actionRegisterAsync = (email, pass, firstName, lastName ) => {
-    return (dispatch) => {
-      const auth = getAuth();
+  export const actionRegisterAsync = (email: string, pass: string, firstName: string, lastName: string) => {
+    return (dispatch:any) => {
+      const auth:any = getAuth();
       console.log(auth)
       createUserWithEmailAndPassword(auth, email, pass)
         .then(async ({ user }) => {
@@ -21,7 +21,7 @@ import {
     };
   };
   
-  export const actionRegisterSync = (firstName, email, pass, lastName) => {
+  export const actionRegisterSync = (firstName: string, email: string, pass: string, lastName: string) => {
     console.log("Usuario Agregado ");
     return {
       type: typesLogin.register,

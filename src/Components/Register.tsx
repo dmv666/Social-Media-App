@@ -37,7 +37,7 @@ const RegisterFormik = () => {
       .required("Required"),
   });
 
-  const dispatch = useDispatch();
+  const dispatch:any = useDispatch();
 
   const handleSubmit = async (
     values: FormValues,
@@ -48,10 +48,7 @@ const RegisterFormik = () => {
       values.pass,
       values.firstName,
       values.lastName
-    ):
-    
-     );
-  };
+    ))}
 
   return (
     <div>
