@@ -103,15 +103,15 @@ export const actionDeleteProductSyn = (payload:any) => {
 };
 
 // ------------------Seacrh--------------------------
-export const actionSearchProductAsyn = (payload:any) => {
+export const actionSearchProductAsyn:any = (payload:any) => {
   return async (dispatch:any) => {
     // llamar a la colleccion para que me de los datos
     const productosCollection = collection(dataBase, "Products");
     // hacer el filtro por nombre
     const q = query(
       productosCollection,
-      where("name", ">=", payload),
-      where("name", "<=", payload + '\uf8ff')
+      where("description", ">=", payload),
+      where("description", "<=", payload + '\uf8ff')
     );
 
     const dataQ = await getDocs(q);
