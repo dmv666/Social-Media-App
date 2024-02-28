@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal, Table } from "react-bootstrap";
+import { Button, Card, CardGroup, Modal, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   actionDeleteProductAsyn,
@@ -29,51 +29,33 @@ const List = () => {
   console.log(products);
   return (
     <div className="divTable">
-      <Table striped bordered hover variant="dark">
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>Descripción</th>
-            <th>Imagen</th>
-            <th>Acción</th>
-          </tr>
-        </thead>
-        <tbody>
-          {products?.map((p) => (
-            <tr key={p.id}>
-              <td>{p.id}</td>
-              <td>{p.description}</td>
-              <td>
-                <ReactImageMagnify
-                  {...{
-                    smallImage: {
-                      alt: "Imagen",
-                      isFluidWidth: true,
-                      src: p.foto,
-                      width: 50,
-                    },
-                    largeImage: {
-                      src: p.foto,
-                      width: 900,
-                      height: 800,
-                    },
-                  }}
-                />
-                {/* <img src={p.foto} alt="" width={"50%"} /> */}
-              </td>
-              <td style={{ padding: 10 }}>
-                <Button onClick={() => dispatch(actionDeleteProductAsyn(p.id))}>
-                  X
-                </Button>
-                <Button variant="primary" onClick={() => handleShow(p)}>
-                  Edit
-                </Button>
-                <Button>Ver</Button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      <CardGroup>
+        {products?.map((p) => (
+              <Card
+                style={{ width: "300px", height: "440px", textAlign: "center" }}
+                key={p.id}
+              >
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}>
+                  <Card.Img
+                    variant=""
+                    src={p.foto}
+                    style={{ width: "560px", height: "370px" }}
+                  />
+                </div>
+
+                <Card.Body>
+                  {/* <Card.Title>{p.name}</Card.Title> */}
+                  <Card.Text>{p.description}</Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                    <Button>Agregar</Button>
+                </Card.Footer>
+              </Card>
+            ))}
+          </CardGroup>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Editar {selectData?.name}</Modal.Title>
