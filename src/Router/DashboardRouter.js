@@ -10,10 +10,10 @@ const DashboarRouter = () => {
   return (
     <>
       <Navbars />
+      <List />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<Add />} />
-        <Route path="/list" element={<List />} />
       </Routes>
     </>
   );
