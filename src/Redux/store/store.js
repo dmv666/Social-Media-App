@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import loginReducer from "../reducers/loginReducer";
-// import productsReducers from "../reducers/productsReducers";
+import productsReducers from "../reducers/productsReducers";
 import { thunk } from "redux-thunk";
 
 // Configuracion de los middleware para manejar acciones asíncronas con Redux-Thunk
@@ -15,7 +15,7 @@ const composeEnhancers =
 
 const reducers = combineReducers({
   loginStore: loginReducer,
-//   productsStore: productsReducers,
+  productsStore: productsReducers,
 });
 
 export const store = createStore(
