@@ -26,9 +26,6 @@ const Navbars = () => {
               </Nav.Link>
 
               <Nav.Link>
-                <Link to="/list">List</Link>
-              </Nav.Link>
-              <Nav.Link>
                 <Link to="/search">Buscar</Link>
               </Nav.Link>
             </Nav>

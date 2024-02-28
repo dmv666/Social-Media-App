@@ -6,18 +6,17 @@ import {
   actionListproductAsyn,
 } from "../Redux/actions/actionsProduct";
 import EditProduct from "./EditProduct";
-import ReactImageMagnify from "react-image-magnify";
 
 const List = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((store) => store.productsStore);
+  const { products } = useSelector((store:any) => store.productsStore);
   console.log(products);
   const [show, setShow] = useState(false);
-  const [selectData, setSelectData] = useState();
+  const [selectData, setSelectData]:any = useState();
 
   const handleClose = () => setShow(false);
 
-  const handleShow = (p) => {
+  const handleShow = (p:any) => {
     setSelectData(p);
     setShow(true);
   };
@@ -28,9 +27,12 @@ const List = () => {
 
   console.log(products);
   return (
-    <div className="divTable">
+    <div className="divTable" style={{
+      display: 'flex',
+      justifyContent: 'center'
+    }}>
       <CardGroup>
-        {products?.map((p) => (
+        {products?.map((p:any) => (
               <Card
                 style={{ width: "300px", height: "440px", textAlign: "center" }}
                 key={p.id}
