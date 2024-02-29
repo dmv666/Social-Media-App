@@ -4,21 +4,27 @@ import Home from "../Containers/Home";
 import Navbars from "../Components/Navbars";
 import Add from "../Components/Add";
 import List from "../Components/List";
+
 import Perfil from "../Components/Perfil";
+import Search from "../Components/Search";
 
 
-const DashboarRouter = () => {
+
+const DashboardRouter = () => {
   return (
     <>
       <Navbars />
+      <List />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<Add />} />
         <Route path="/list" element={<List />} />
         <Route path="/perfil" element={<Perfil />} />
+        <Route path="/search" element={<Search />} />
+
       </Routes>
     </>
   );
 };
 
-export default DashboarRouter;
+export default DashboardRouter;
