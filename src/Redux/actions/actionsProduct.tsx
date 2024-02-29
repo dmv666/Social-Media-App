@@ -81,6 +81,7 @@ export const actionEditProductSyn = (payload:any) => {
 
 // ----------------Eliminar Productos-----------------------
 
+export const actionDeleteProductAsyn:any = (payload:any) => {
 export const actionDeleteProductAsyn = (payload:any) => {
   return async (dispatch:any) => {
     const productosCollection = collection(dataBase, "Products");
@@ -130,4 +131,5 @@ export const actionSearchProductSyn = (payload:any) => {
     type: typesProducts.search,
     payload,
   };
+};
 };
