@@ -51,106 +51,54 @@ const RegisterFormik = () => {
     ))}
 
   return (
-    <div>
-      <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          email: "",
-          pass: "",
-          pass2: "",
-        }}
-        validationSchema={SignupSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ errors, touched }) => (
-          <Form>
-            <FormLabel
-              style={{ fontSize: "18px", fontWeight: "bold" }}
-            >
-              Nombre
-            </FormLabel>
-            <Field name="firstName" style={{ padding: "5px" }} />
-            {errors.firstName && touched.firstName ? (
-              <div>
-                {errors.firstName}
-              </div>
-            ) : null}
+    <div style={{
+      margin: '0 400px'
+    }}>
+    <Formik
+      initialValues={{
+        firstName: "",
+        lastName: "",
+        email: "",
+        pass: "",
+        pass2: "",
+      }}
+      validationSchema={SignupSchema}
+      onSubmit={handleSubmit}
+    >
+      {({ errors, touched }) => (
+       <Form style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+       <FormLabel style={{ fontSize: '18px', fontWeight: 'bold' }}>Nombre</FormLabel>
+       <Field name="firstName" style={{ padding: '5px' }} />
+       {errors.firstName && touched.firstName ? (
+         <div style={{ color: 'red', fontSize: '14px' }}>{errors.firstName}</div>
+       ) : null}
 
-            <FormLabel
-              style={{ fontSize: "18px", fontWeight: "bold" }}
-            >
-              Apellido
-            </FormLabel>
-            <Field name="lastName" style={{ padding: "5px" }} />
-            {errors.lastName && touched.lastName ? (
-              <div style={{ color: "red", fontSize: "14px" }}>
-                {errors.lastName}
-              </div>
-            ) : null}
+       <FormLabel style={{ fontSize: '18px', fontWeight: 'bold' }}>Apellido</FormLabel>
+       <Field name="lastName" style={{ padding: '5px' }} />
+       {errors.lastName && touched.lastName ? (
+         <div style={{ color: 'red', fontSize: '14px' }}>{errors.lastName}</div>
+       ) : null}
 
-            <FormLabel
-              style={{ fontSize: "18px", fontWeight: "bold" }}
-            >
-              Email
-            </FormLabel>
-            <Field
-              name="email"
-              type="email"
-              style={{ padding: "5px" }}
-            />
-            {errors.email && touched.email ? (
-              <div style={{ color: "red", fontSize: "14px" }}>
-                {errors.email}
-              </div>
-            ) : null}
+       <FormLabel style={{ fontSize: '18px', fontWeight: 'bold' }}>Email</FormLabel>
+       <Field name="email" type="email" style={{ padding: '5px' }} />
+       {errors.email && touched.email ? <div style={{ color: 'red', fontSize: '14px' }}>{errors.email}</div> : null}
 
-            <FormLabel
-              style={{ fontSize: "18px", fontWeight: "bold" }}
-            >
-              Contraseña
-            </FormLabel>
-            <Field
-              name="pass"
-              type="password"
-              style={{ padding: "5px" }}
-            />
-            {errors.pass && touched.pass ? (
-              <div style={{ color: "red", fontSize: "14px" }}>
-                {errors.pass}
-              </div>
-            ) : null}
+       <FormLabel style={{ fontSize: '18px', fontWeight: 'bold' }}>Contraseña</FormLabel>
+       <Field name="pass" type="password" style={{ padding: '5px' }} />
+       {errors.pass && touched.pass ? <div style={{ color: 'red', fontSize: '14px' }}>{errors.pass}</div> : null}
 
-            <FormLabel
-              style={{ fontSize: "18px", fontWeight: "bold" }}
-            >
-              Confirmar Contraseña
-            </FormLabel>
-            <Field
-              name="pass2"
-              type="password"
-              style={{ padding: "5px" }}
-            />
-            {errors.pass2 && touched.pass2 ? (
-              <div style={{ color: "red", fontSize: "14px" }}>
-                {errors.pass2}
-              </div>
-            ) : null}
+       <FormLabel style={{ fontSize: '18px', fontWeight: 'bold' }}>Confirmar Contraseña</FormLabel>
+       <Field name="pass2" type="password" style={{ padding: '5px' }} />
+       {errors.pass2 && touched.pass2 ? <div style={{ color: 'red', fontSize: '14px' }}>{errors.pass2}</div> : null}
 
-            <button
-              type="submit">
-              Enviar
-            </button>
-            <Button
-              variant="outline-success"
-              style={{ margin: "10px" }}
-            >
-              <Link to="/login">Login</Link>
-            </Button>
-          </Form>
-        )}
-      </Formik>
-    </div>
+       <button type="submit" style={{ padding: '10px', background: 'blue', color: 'white', borderRadius: '5px', cursor: 'pointer' }}>Enviar</button>
+          <Button variant="outline-success" style={{ margin: "10px" }}>
+        <Link to="/login">Login</Link>
+      </Button>
+        </Form>
+      )}
+    </Formik>
+  </div>
   );
 };
 
