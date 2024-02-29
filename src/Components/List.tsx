@@ -52,9 +52,12 @@ const List = () => {
                   {/* <Card.Title>{p.name}</Card.Title> */}
                   <Card.Text>{p.description}</Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <Button>Agregar</Button>
-                </Card.Footer>
+                <Button onClick={() => dispatch(actionDeleteProductAsyn(p.id))}>
+                  X
+                </Button>
+                <Button variant="primary" onClick={() => handleShow(p)}>
+                  Edit
+                </Button>
               </Card>
             ))}
           </CardGroup>

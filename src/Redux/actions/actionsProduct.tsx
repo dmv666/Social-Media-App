@@ -81,7 +81,7 @@ export const actionEditProductSyn = (payload:any) => {
 
 // ----------------Eliminar Productos-----------------------
 
-export const actionDeleteProductAsyn = (payload:any) => {
+export const actionDeleteProductAsyn:any = (payload:any) => {
   return async (dispatch:any) => {
     const productosCollection = collection(dataBase, "Products");
     const q = query(productosCollection, where("id", "==", payload));

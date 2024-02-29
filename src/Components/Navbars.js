@@ -10,7 +10,7 @@ const Navbars = () => {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <Navbar.Brand href="#">Ejemplo Redux</Navbar.Brand>
+          <Navbar.Brand href="/*">Findy</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -30,6 +30,9 @@ const Navbars = () => {
               </Nav.Link>
               <Nav.Link>
                 <Link to="/search">Buscar</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/perfil">Perfil</Link>
               </Nav.Link>
             </Nav>
             <Form className="d-flex">
