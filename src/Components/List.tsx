@@ -69,9 +69,11 @@ const List = () => {
   console.log(products);
   return (
     <div className="divTable" style={{
+      
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
     }}>
+    <h1> Bienvenido, aqui podras agregar nuevos posts</h1>
       <CardGroup>
         {products?.map((p:any) => (
               <Card
