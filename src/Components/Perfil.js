@@ -12,6 +12,8 @@ const Perfil = () => {
     fotop: " ",
   });
 
+  console.log("Dentro del profile")
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formValue);
@@ -33,6 +35,7 @@ const Perfil = () => {
 
   return (
     <div className="divAdd">
+          <h1> Bienvenido, aqui podras agregar tu nombre y una foto de perfil</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formPlaintextName">
           <Form.Label column sm="2">

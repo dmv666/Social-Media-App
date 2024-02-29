@@ -43,7 +43,6 @@ const Navbars = () => {
     <StyledNavbar>
       <StyledNav expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <Navbar.Brand href="/*">Findy</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -55,14 +54,14 @@ const Navbars = () => {
                 <StyledLink to="/">Home</StyledLink>
               </Nav.Link>
               <Nav.Link>
-                <StyledLink to="/add">Add</StyledLink>
+                <StyledLink to="/add">Post</StyledLink>
               </Nav.Link>
 
               <Nav.Link>
-                <StyledLink to="/search">Buscar</StyledLink>
+                <StyledLink to="/search">Search</StyledLink>
               </Nav.Link>
               <Nav.Link>
-                <StyledLink to="/perfil">Perfil</StyledLink>
+                <StyledLink to="/perfil">Profile</StyledLink>
               </Nav.Link>
             </Nav>
             <Form className="d-flex">

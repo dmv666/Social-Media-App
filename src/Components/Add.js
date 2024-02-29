@@ -6,11 +6,15 @@ import { actionAddproductAsyn } from "../Redux/actions/actionsProduct";
 import { FileUpload } from "../Helpers/FileUpload";
 
 const Add = () => {
+
+  console.log("dentro del add")
+  
   const dispatch = useDispatch();
   const [formValue, handleInputChange, reset] = useForm({
     des: "",
     foto: " ",
   });
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
