@@ -3,12 +3,45 @@ import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { actionLogoutAsyn } from "../Redux/actions/actionsLogin";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
+
+const StyledNavbar = styled(Navbar)`
+  position: fixed;
+  
+  width: 100%;
+  background-color: #FF7674; // Cambiar a rosa
+`;
+
+const StyledNav = styled(Nav)`
+  display: flex;
+  width: 100%;
+  justify-content: space-around; // Espaciado uniforme para los links
+`;
+
+const StyledLink = styled(Link)`
+  color: white;
+  font-size:  20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+`;
+
+const LogoutButton = styled.button`
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: auto; // Empuja el botón al extremo derecho
+`;
 const Navbars = () => {
   const dispatch = useDispatch();
   return (
-    <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+    <StyledNavbar>
+      <StyledNav expand="lg" className="bg-body-tertiary">
         <Container fluid>
           <Navbar.Brand href="/*">Findy</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -19,31 +52,31 @@ const Navbars = () => {
               navbarScroll
             >
               <Nav.Link href="#action1">
-                <Link to="/">Home</Link>
+                <StyledLink to="/">Home</StyledLink>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/add">Add</Link>
+                <StyledLink to="/add">Add</StyledLink>
               </Nav.Link>
 
               <Nav.Link>
-                <Link to="/search">Buscar</Link>
+                <StyledLink to="/search">Buscar</StyledLink>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/perfil">Perfil</Link>
+                <StyledLink to="/perfil">Perfil</StyledLink>
               </Nav.Link>
             </Nav>
             <Form className="d-flex">
-              <Button
+              <LogoutButton
                 variant="outline-success"
                 onClick={() => dispatch(actionLogoutAsyn())}
               >
                 Logout
-              </Button>
+              </LogoutButton>
             </Form>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
-    </div>
+      </StyledNav>
+      </StyledNavbar>
   );
 };
 

@@ -16,7 +16,7 @@ const DashboardRouter = () => {
       <Navbars />
       <List />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<List />} />
         <Route path="/add" element={<Add />} />
         <Route path="/list" element={<List />} />
         <Route path="/perfil" element={<Perfil />} />
