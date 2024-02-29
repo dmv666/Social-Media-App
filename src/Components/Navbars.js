@@ -31,7 +31,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const LogoutButton = styled(Button)`
+const LogoutButton = styled.button`
   font-size: 1.2rem;
   padding: 10px;
   border-radius: 5px;
@@ -40,20 +40,43 @@ const LogoutButton = styled(Button)`
 const Navbars = () => {
   const dispatch = useDispatch();
   return (
-    <StyledNavbar expand="lg">
-    <Container fluid>
-      <StyledNav>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/add">Add</StyledLink>
-        <StyledLink to="/search">Buscar</StyledLink>
+    <StyledNavbar>
+      <StyledNav expand="lg" className="bg-body-tertiary">
+        <Container fluid>
+          <Navbar.Brand href="/*">Findy</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Nav.Link href="#action1">
+                <StyledLink to="/">Home</StyledLink>
+              </Nav.Link>
+              <Nav.Link>
+                <StyledLink to="/add">Add</StyledLink>
+              </Nav.Link>
+
+              <Nav.Link>
+                <StyledLink to="/search">Buscar</StyledLink>
+              </Nav.Link>
+              <Nav.Link>
+                <StyledLink to="/perfil">Perfil</StyledLink>
+              </Nav.Link>
+            </Nav>
+            <Form className="d-flex">
+              <LogoutButton
+                variant="outline-success"
+                onClick={() => dispatch(actionLogoutAsyn())}
+              >
+                Logout
+              </LogoutButton>
+            </Form>
+          </Navbar.Collapse>
+        </Container>
       </StyledNav>
-      <Form className="d-flex">
-        <LogoutButton variant="outline-success" onClick={() => dispatch(actionLogoutAsyn())}>
-          Logout
-        </LogoutButton>
-      </Form>
-    </Container>
-  </StyledNavbar>
+      </StyledNavbar>
   );
 };
 

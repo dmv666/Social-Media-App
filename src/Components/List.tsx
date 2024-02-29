@@ -93,9 +93,18 @@ const List = () => {
                   {/* <Card.Title>{p.name}</Card.Title> */}
                   <Card.Text>{p.description}</Card.Text>
                 </Card.Body>
+
+                <Button onClick={() => dispatch(actionDeleteProductAsyn(p.id))}>
+                  X
+                </Button>
+                <Button variant="primary" onClick={() => handleShow(p)}>
+                  Edit
+                </Button>
+
                 <Card.Footer>
                     <Button>Agregar</Button>
                 </Card.Footer>
+
               </Card>
             ))}
           </CardGroup>
@@ -114,4 +123,7 @@ const List = () => {
   );
 };
 
+
 export default List;
+
+

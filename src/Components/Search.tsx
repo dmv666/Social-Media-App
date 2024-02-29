@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { Button } from "react-bootstrap";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { actionSearchProductAsyn } from "../Redux/actions/actionsProduct";
+import {  } from "../Redux/actions/actionsProduct";
 import { useFormik } from "formik";
 import List from "./List";
+import { actionSearchProductAsyn } from "../Redux/actions/actionsPerfil";
 
 
 const Search = () => {
@@ -36,7 +37,6 @@ const formik = useFormik({
 
         <Button type="submit">Search</Button>
       </form>
-    
     </div>
   )
 }
