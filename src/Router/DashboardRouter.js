@@ -4,6 +4,7 @@ import Home from "../Containers/Home";
 import Navbars from "../Components/Navbars";
 import Add from "../Components/Add";
 import List from "../Components/List";
+import Search from "../Components/Search";
 
 
 const DashboarRouter = () => {
@@ -14,6 +15,8 @@ const DashboarRouter = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add" element={<Add />} />
+        <Route path="/search" element={<Search />} />
+
       </Routes>
     </>
   );
