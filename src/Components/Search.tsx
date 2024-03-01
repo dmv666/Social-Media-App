@@ -26,16 +26,17 @@ const formik = useFormik({
 
   return (
       <div>
+        <h1> Comienza a buscar a tus amigos!!!</h1>
       <form onSubmit={formik.handleSubmit}>
         <input
           name="search"
-          placeholder="Buscar Producto"
+          placeholder="Buscar Amigos"
           onChange={formik.handleChange}
           value={formik.values.search}
           className={formik.touched.search && formik.errors.search ? 'error' : ''}
         />
 
-        <Button type="submit">Search</Button>
+        <Button type="submit">Buscar</Button>
       </form>
     </div>
   )
