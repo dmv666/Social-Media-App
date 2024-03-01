@@ -73,7 +73,7 @@ const List = () => {
       display: 'flex',
       justifyContent: 'center',
     }}>
-    <h1> Bienvenido, aqui podras agregar nuevos posts</h1>
+    <h1> Bienvenido a Findy!</h1>
       <CardGroup>
         {products?.map((p:any) => (
               <Card

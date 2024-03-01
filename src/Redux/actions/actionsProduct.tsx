@@ -33,7 +33,7 @@ export const actionListproductSyn = (payload:any) => {
   };
 };
 // ------------------Agregar---------------------
-export const actionAddproductAsyn = (payload:any) => {
+export const actionAddproductAsyn:any = (payload:any) => {
   return async (dispatch:any) => {
     await addDoc(collection(dataBase, "Products"), payload)
       .then((resp) => {
