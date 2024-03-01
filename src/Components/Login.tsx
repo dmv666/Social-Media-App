@@ -58,13 +58,13 @@ const RegisterLink = styled(Link)`
 `;
 const Login = () => {
   const dispatch = useDispatch();
-  const [formValue, handleInputChange, reset] = useForm({
+  const [formValue, handleInputChange, reset]:any = useForm({
     email: "",
     pass: "",
   });
 
   const { email, pass } = formValue;
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
 
     dispatch(actionLoginAsyn(email, pass));
@@ -94,14 +94,17 @@ const Login = () => {
           onChange={handleInputChange}
         />
       </Form.Group>
-
       <LoginButton type="submit">Login</LoginButton>
       <GoogleButton onClick={() => dispatch(actionGoogle())}>
         Google
       </GoogleButton>
     </LoginForm>
+   
+    
     <RegisterButton>
+
       <RegisterLink to="/register">Usuario Nuevo / Registrar</RegisterLink>
+
     </RegisterButton>
   </LoginContainer>
 );

@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
-const StyledNavbar = styled(Navbar)`
-  position: fixed;
-  
+const StyledNavbar = styled(Navbar)`  
   width: 100%;
   background-color: #FF7674; // Cambiar a rosa
+  padding: 20px 0;
 `;
 
 const StyledNav = styled(Nav)`
@@ -37,20 +36,23 @@ const LogoutButton = styled.button`
   border-radius: 5px;
   margin-left: auto; // Empuja el botón al extremo derecho
 `;
+
+
 const Navbars = () => {
   const dispatch = useDispatch();
   return (
     <StyledNavbar>
       <StyledNav expand="lg" className="bg-body-tertiary">
         <Container fluid>
-          <Navbar.Toggle aria-controls="navbarScroll" />
+    
           <Navbar.Collapse id="navbarScroll">
             <Nav
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">
+              <img src="https://res.cloudinary.com/madrigalsito/image/upload/v1709261164/LOGOLOGO_3_eeyfer.png"/>
+              <Nav.Link>
                 <StyledLink to="/">Home</StyledLink>
               </Nav.Link>
               <Nav.Link>
@@ -66,7 +68,6 @@ const Navbars = () => {
             </Nav>
             <Form className="d-flex">
               <LogoutButton
-                variant="outline-success"
                 onClick={() => dispatch(actionLogoutAsyn())}
               >
                 Logout

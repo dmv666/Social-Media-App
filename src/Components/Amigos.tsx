@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, CardGroup, Modal, Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  actionDeleteProductAsyn,
-  actionListproductAsyn,
-} from "../Redux/actions/actionsProduct";
+    actionDeleteAmigosAsyn,
+  actionAmigosAsyn,
+} from "../Redux/actions/actionAmigos";
 import EditProduct from "./EditProduct";
 import styled from "styled-components";
 
@@ -48,10 +48,10 @@ const StyledCardFooter = styled(Card.Footer)`
 `;
 
 
-const List = () => {
+const Amigos = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector((store:any) => store.productsStore);
-  console.log(products);
+  const { amigos } = useSelector((store:any) => store.amigosStore);
+  console.log(amigos);
   const [show, setShow] = useState(false);
   const [selectData, setSelectData]:any = useState();
 
@@ -63,70 +63,37 @@ const List = () => {
   };
 
   useEffect(() => {
-    dispatch(actionListproductAsyn());
+    dispatch(actionAmigosAsyn());
   }, []);
 
-  console.log(products);
+  console.log(amigos);
   return (
     <div className="divTable" style={{
       
       display: 'flex',
       justifyContent: 'center',
     }}>
-    
+    <h1>Sociecitos</h1>
       <CardGroup>
-      <h1> Bienvenido a Findy!</h1>
-        {products?.map((p:any) => (
+        {amigos?.map((p:any) => (
               <Card
                 style={{ width: "300px", height: "440px", textAlign: "center" }}
                 key={p.id}
               >
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center'
-                }}>
-                  <Card.Img
-                    variant=""
-                    src={p.foto}
-                    style={{ width: "560px", height: "370px" }}
-                  />
-                </div>
-
                 <Card.Body>
-                  {/* <Card.Title>{p.name}</Card.Title> */}
-                  <Card.Text>{p.description}</Card.Text>
+                  <Card.Title>{p.Name}</Card.Title>
                 </Card.Body>
 
-                <Button onClick={() => dispatch(actionDeleteProductAsyn(p.id))}>
+                <Button onClick={() => dispatch(actionDeleteAmigosAsyn(p.id))}>
                   X
                 </Button>
-                <Button variant="primary" onClick={() => handleShow(p)}>
-                  Edit
-                </Button>
-
-                <Card.Footer>
-                    <Button>Agregar</Button>
-                </Card.Footer>
-
+        
               </Card>
             ))}
           </CardGroup>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Editar {selectData?.name}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          {show && selectData !== "undefined" && (
-            <EditProduct datos={selectData} handleClose={handleClose} />
-          )}
-        </Modal.Body>
-        <Modal.Footer />
-      </Modal>
     </div>
   );
 };
 
 
-export default List;
-
-
+export default Amigos;

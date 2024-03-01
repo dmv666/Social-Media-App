@@ -33,8 +33,9 @@ export const actionListperfilAsyn:any = () => {
       payload,
     };
   };
+  
   //----------------------add-----------------------//
-  export const actionAddperfilAsyn = (payload:any) => {
+  export const actionAddperfilAsyn:any = (payload:any) => {
     return async (dispatch:any) => {
       await addDoc(collection(dataBase, "Perfil"), payload)
         .then((resp) => {
@@ -54,10 +55,10 @@ export const actionListperfilAsyn:any = () => {
   };
   
   // ------------------Editar---------------------
-  export const actionEditperfilAsyn = (payload:any) => {
+  export const actionEditperfilAsyn:any = (payload:any) => {
     return async (dispatch:any) => {
       let uid = "";
-      const collectionP = collection(dataBase, "Products");
+      const collectionP = collection(dataBase, "Perfil");
       const q = query(collectionP, where("id", "==", payload.id));
       const datosQ = await getDocs(q);
       datosQ.forEach((docu) => {
@@ -106,7 +107,7 @@ export const actionListperfilAsyn:any = () => {
 export const actionSearchProductAsyn:any = (payload:any) => {
   return async (dispatch:any) => {
     // llamar a la colleccion para que me de los datos
-    const productosCollection = collection(dataBase, "Products");
+    const productosCollection = collection(dataBase, "Perfil");
     // hacer el filtro por nombre
     const q = query(
       productosCollection,

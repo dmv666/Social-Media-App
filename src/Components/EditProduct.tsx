@@ -4,14 +4,13 @@ import useForm from "../Hooks/useForm";
 import { actionEditProductAsyn } from "../Redux/actions/actionsProduct";
 import { useDispatch } from "react-redux";
 
-const EditProduct = ({ datos, handleClose }) => {
+const EditProduct = ({ datos, handleClose }:any) => {
   const dispatch = useDispatch();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [formValue, handleInputChange, reset] = useForm({
+  const [formValue, handleInputChange, reset]:any = useForm({
     des: datos.description,
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     console.log(formValue);
     let obj = {

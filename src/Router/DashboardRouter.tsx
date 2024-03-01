@@ -5,6 +5,7 @@ import Add from "../Components/Add";
 import List from "../Components/List";
 import Perfil from "../Components/Perfil";
 import Search from "../Components/Search";
+import Amigos from "../Components/Amigos";
 
 
 
@@ -12,12 +13,14 @@ const DashboardRouter = () => {
   return (
     <>
       <Navbars />
-      <List />
+    
       <Routes>
         <Route path="/" element={<List />} />
         <Route path="/add" element={<Add />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/amigos" element={<Amigos />} />
+
 
       </Routes>
     </>

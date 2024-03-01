@@ -10,8 +10,8 @@ import {
   
   // ------------Iniciando con Usuario y Contraseña---------------------//
   
-  export const actionLoginAsyn = (email, pass) => {
-    return (dispatch) => {
+  export const actionLoginAsyn:any = (email:any, pass:any) => {
+    return (dispatch:any) => {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, email, pass)
         .then((userCredential) => {
@@ -27,7 +27,7 @@ import {
     };
   };
   
-  export const actionLoginSyn = (email, pass) => {
+  export const actionLoginSyn = (email:any, pass:any) => {
     return {
       type: typesLogin.login,
       payload: { email, pass },
@@ -35,13 +35,13 @@ import {
   };
   
   // ------------Iniciando con Google-----------------------//
-  export const actionGoogle = () => {
-    return (dispatch) => {
+  export const actionGoogle:any = () => {
+    return (dispatch:any) => {
       const auth = getAuth();
       signInWithPopup(auth, google)
         .then((result) => {
-          const credential = GoogleAuthProvider.credentialFromResult(result);
-          const token = credential.accessToken;
+          const credential:any = GoogleAuthProvider.credentialFromResult(result);
+          const token= credential.accessToken;
           console.log(token);
           // The signed-in user info.
           const user = result.user;
@@ -55,8 +55,8 @@ import {
   
   // ------------------------Logout-------------------------------//
   
-  export const actionLogoutAsyn = () => {
-    return (dispatch) => {
+  export const actionLogoutAsyn:any = () => {
+    return (dispatch:any) => {
       const auth = getAuth();
   
       signOut(auth)
