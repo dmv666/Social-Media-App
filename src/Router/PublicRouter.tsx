@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-const PublicRouter = ({ isAutentication, children }) => {
+const PublicRouter = ({ isAutentication, children }:any) => {
   return !isAutentication ? children : <Navigate to="/*" />;
 };
 

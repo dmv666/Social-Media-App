@@ -5,8 +5,8 @@ import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import {  } from "../Redux/actions/actionsProduct";
 import { useFormik } from "formik";
-import List from "./List";
-import { actionSearchProductAsyn } from "../Redux/actions/actionsPerfil";
+import Amigos from "./Amigos";
+import { actionSearchProductAsyn } from "../Redux/actions/actionsProduct";
 
 
 const Search = () => {
@@ -38,6 +38,7 @@ const formik = useFormik({
 
         <Button type="submit">Buscar</Button>
       </form>
+      <Amigos />
     </div>
   )
 }

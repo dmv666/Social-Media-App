@@ -53,7 +53,7 @@ export const actionAddproductSyn = (payload:any) => {
 };
 
 // ------------------Editar---------------------
-export const actionEditProductAsyn = (payload:any) => {
+export const actionEditProductAsyn:any = (payload:any) => {
   return async (dispatch:any) => {
     let uid = "";
     const collectionP = collection(dataBase, "Products");
@@ -106,12 +106,12 @@ export const actionDeleteProductSyn = (payload:any) => {
 export const actionSearchProductAsyn:any = (payload:any) => {
   return async (dispatch:any) => {
     // llamar a la colleccion para que me de los datos
-    const productosCollection = collection(dataBase, "Products");
+    const productosCollection = collection(dataBase, "amigos");
     // hacer el filtro por nombre
     const q = query(
       productosCollection,
-      where("description", ">=", payload),
-      where("description", "<=", payload + '\uf8ff')
+      where("Name", ">=", payload),
+      where("Name", "<=", payload + '\uf8ff')
     );
 
     const dataQ = await getDocs(q);
